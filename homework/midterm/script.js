@@ -1,4 +1,4 @@
-let balance = 0;
+let records = JSON.parse(localStorage.getItem("records")) || [];
 
 function addRecord() {
     const item = document.getElementById("item").value;
@@ -10,21 +10,53 @@ function addRecord() {
         return;
     }
 
-    const list = document.getElementById("recordList");
-    const li = document.createElement("li");
+    records.push({
+        item: item,
+        amount: amount,
+        type: type
+    });
 
-    if (type === "income") {
-        balance += amount;
-        li.innerHTML = `➕ ${item}：${amount} 元`;
-    } else {
-        balance -= amount;
-        li.innerHTML = `➖ ${item}：${amount} 元`;
-    }
-
-    list.appendChild(li);
-
-    document.getElementById("balance").textContent = balance;
+    localStorage.setItem("records", JSON.stringify(records));
 
     document.getElementById("item").value = "";
     document.getElementById("amount").value = "";
+
+    showRecords();
 }
+
+function deleteRecord(index) {
+    records.splice(index, 1);
+    localStorage.setItem("records", JSON.stringify(records));
+    showRecords();
+}
+
+function showRecords() {
+    const list = document.getElementById("recordList");
+    const balanceText = document.getElementById("balance");
+
+    list.innerHTML = "";
+
+    let income = 0;
+    let expense = 0;
+
+    records.forEach((record, index) => {
+        const li = document.createElement("li");
+
+        if (record.type === "income") {
+            income += record.amount;
+            li.innerHTML = `➕ ${record.item}：${record.amount} 元 
+            <button onclick="deleteRecord(${index})">刪除</button>`;
+        } else {
+            expense += record.amount;
+            li.innerHTML = `➖ ${record.item}：${record.amount} 元 
+            <button onclick="deleteRecord(${index})">刪除</button>`;
+        }
+
+        list.appendChild(li);
+    });
+
+    const balance = income - expense;
+    balanceText.textContent = balance;
+}
+
+showRecords();
