@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人記帳小幫手</title>
+</head>
+<body>
+
+    <h1>💰 個人記帳小幫手</h1>
+
+    <h3>新增紀錄</h3>
+
+    <input type="text" id="item" placeholder="項目名稱">
+    <input type="number" id="amount" placeholder="金額">
+
+    <select id="type">
+        <option value="income">收入</option>
+        <option value="expense">支出</option>
+    </select>
+
+    <button onclick="addRecord()">新增</button>
+
+    <hr>
+
+    <h3>目前餘額：<span id="balance">0</span> 元</h3>
+
+    <ul id="recordList"></ul>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
