@@ -8,7 +8,114 @@
 <h1>習題7 JavaScript 練習</h1>
 
 <script>
-// 等等貼 10 題答案
+// 1
+const post = {
+    id: 1,
+    title: "Hello World",
+    content: "Markdown content"
+};
+console.log(post.title);
+console.log(post["title"]);
+
+// 2
+const req = {
+    body: {
+        title: "JS教學",
+        content: "內容在此",
+        author: "Gemini"
+    }
+};
+
+const { title, content } = req.body;
+console.log(title, content);
+
+// 3
+const posts = [
+    {id:1, t:"A"},
+    {id:2, t:"B"}
+];
+
+let html = "";
+
+posts.forEach(post => {
+    html += `<div>${post.t}</div>`;
+});
+
+console.log(html);
+
+// 4
+let params = {};
+params.id = 99;
+console.log(params);
+
+// 5
+function fetchData(id, callback){
+    const data = {
+        id: id,
+        status: "success"
+    };
+
+    callback(null, data);
+}
+
+fetchData(101, (err, data)=>{
+    console.log(data);
+});
+
+// 6
+const jsonStr = '{"title":"Post 1","tags":["js","node"]}';
+
+const obj = JSON.parse(jsonStr);
+
+console.log(obj.tags[1]);
+
+// 7
+function fakeGet(sql, params, callback){
+    callback(null,{
+        title:"Fake Title"
+    });
+}
+
+fakeGet("SELECT *", [1], (err,row)=>{
+    console.log(row.title);
+});
+
+// 8
+let user = "冠侖";
+
+let welcomeHtml = `
+<h1>Welcome, ${user ? user : "Stranger"}</h1>
+`;
+
+console.log(welcomeHtml);
+
+// 9
+const contents = [
+    "Very long content here",
+    "Another Very long content here",
+    "3rd Very long content here"
+];
+
+contents.forEach(text=>{
+    console.log(text.substring(0,10) + "...");
+});
+
+// 10
+function checkAdmin(role, callback){
+    if(role !== "admin"){
+        callback("Access Denied");
+    }else{
+        callback(null,"Welcome");
+    }
+}
+
+checkAdmin("admin",(err,msg)=>{
+    if(err){
+        console.log(err);
+    }else{
+        console.log(msg);
+    }
+});
 </script>
 
 </body>
