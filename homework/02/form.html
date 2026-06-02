@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>學生資料註冊表單</title>
+
+<style>
+body{
+    font-family: Microsoft JhengHei;
+    background:#f4f4f4;
+}
+
+.container{
+    width:700px;
+    margin:30px auto;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,.2);
+}
+
+h1{
+    text-align:center;
+    color:#0066cc;
+}
+
+label{
+    display:block;
+    margin-top:15px;
+}
+
+input,select,textarea{
+    width:100%;
+    padding:8px;
+    margin-top:5px;
+}
+
+.radio-group,
+.checkbox-group{
+    margin-top:10px;
+}
+
+button{
+    margin-top:20px;
+    padding:10px 20px;
+    background:#0066cc;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>學生資料註冊表單</h1>
+
+<form>
+
+<label>姓名</label>
+<input type="text" placeholder="請輸入姓名">
+
+<label>學號</label>
+<input type="text" value="111410258">
+
+<label>Email</label>
+<input type="email">
+
+<label>密碼</label>
+<input type="password">
+
+<label>生日</label>
+<input type="date">
+
+<label>電話</label>
+<input type="tel">
+
+<label>年級</label>
+<select>
+    <option>大一</option>
+    <option>大二</option>
+    <option>大三</option>
+    <option>大四</option>
+</select>
+
+<label>性別</label>
+
+<div class="radio-group">
+<input type="radio" name="gender"> 男
+<input type="radio" name="gender"> 女
+</div>
+
+<label>興趣</label>
+
+<div class="checkbox-group">
+<input type="checkbox"> 投資理財
+<input type="checkbox"> 健身
+<input type="checkbox"> 旅遊
+<input type="checkbox"> 程式設計
+</div>
+
+<label>對網頁設計的滿意度</label>
+<input type="range" min="0" max="100">
+
+<label>喜歡的顏色</label>
+<input type="color">
+
+<label>上傳照片</label>
+<input type="file">
+
+<label>自我介紹</label>
+<textarea rows="5"></textarea>
+
+<button type="submit">送出表單</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
