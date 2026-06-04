@@ -3,128 +3,282 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>蘇冠侖－網頁設計課程成果展示</title>
+  <title>蘇冠侖｜期末作業成果整理</title>
+
   <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:Arial,"Microsoft JhengHei",sans-serif;background:#f3f4f6;color:#1f2937}
-    header{background:#24384d;color:white;text-align:center;padding:60px 20px}
-    header h1{font-size:44px;margin-bottom:18px}
-    header p{font-size:18px;color:#e5e7eb}
-    .info{width:90%;max-width:1200px;margin:35px auto;background:white;padding:28px 32px;border-left:6px solid #3498db;border-radius:12px;box-shadow:0 4px 14px rgba(0,0,0,.08)}
-    .info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;line-height:1.8}
-    .info strong{color:#111827}
-    .grid{width:90%;max-width:1200px;margin:30px auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px}
-    .card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,.08);display:flex;flex-direction:column}
-    .tag{background:#3498db;color:white;display:inline-block;padding:10px 18px;font-weight:bold}
-    .repo{background:#8e44ad}
-    .midterm{background:#e74c3c}
-    .content{padding:28px;display:flex;flex-direction:column;flex:1}
-    .content h2{font-size:24px;margin-bottom:14px;color:#1f2937}
-    .content p{line-height:1.8;color:#555;flex:1}
-    .btn{display:inline-block;margin-top:22px;padding:12px 20px;background:#24384d;color:white;text-decoration:none;border-radius:8px;font-weight:bold;align-self:flex-start}
-    .btn:hover{opacity:.9}
-    footer{margin-top:50px;background:#24384d;color:white;text-align:center;padding:25px}
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family: Arial, "Microsoft JhengHei", sans-serif;
+      background:#f5f5f5;
+      color:#222;
+      line-height:1.7;
+    }
+
+    header{
+      background:#111;
+      color:#fff;
+      padding:60px 8%;
+      border-bottom:6px solid #444;
+    }
+
+    header h1{
+      font-size:42px;
+      margin-bottom:12px;
+      letter-spacing:2px;
+    }
+
+    header p{
+      color:#ccc;
+      font-size:18px;
+    }
+
+    .container{
+      width:88%;
+      max-width:1000px;
+      margin:40px auto;
+    }
+
+    .info{
+      background:#fff;
+      border:1px solid #ddd;
+      padding:28px;
+      margin-bottom:30px;
+      box-shadow:0 3px 10px rgba(0,0,0,.06);
+    }
+
+    .info h2{
+      margin-bottom:15px;
+      color:#111;
+      border-bottom:2px solid #222;
+      padding-bottom:8px;
+    }
+
+    .info-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:10px 20px;
+      margin-bottom:18px;
+    }
+
+    .info strong{
+      color:#000;
+    }
+
+    .list{
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+    }
+
+    .card{
+      background:#fff;
+      border:1px solid #d0d0d0;
+      padding:24px 28px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:24px;
+      box-shadow:0 3px 10px rgba(0,0,0,.05);
+    }
+
+    .card:hover{
+      transform:translateY(-2px);
+      transition:.2s;
+      box-shadow:0 6px 16px rgba(0,0,0,.09);
+    }
+
+    .left{
+      flex:1;
+    }
+
+    .tag{
+      display:inline-block;
+      background:#222;
+      color:#fff;
+      padding:5px 12px;
+      font-size:14px;
+      margin-bottom:10px;
+      letter-spacing:1px;
+    }
+
+    .repo{
+      background:#555;
+    }
+
+    .midterm{
+      background:#000;
+    }
+
+    .card h2{
+      font-size:24px;
+      margin-bottom:8px;
+      color:#111;
+    }
+
+    .card p{
+      color:#555;
+      font-size:16px;
+    }
+
+    .btn{
+      white-space:nowrap;
+      display:inline-block;
+      padding:11px 18px;
+      background:#111;
+      color:#fff;
+      text-decoration:none;
+      border:1px solid #111;
+      font-weight:bold;
+    }
+
+    .btn:hover{
+      background:#fff;
+      color:#111;
+    }
+
+    footer{
+      background:#111;
+      color:#ccc;
+      text-align:center;
+      padding:24px;
+      margin-top:50px;
+      font-size:14px;
+    }
+
+    @media(max-width:700px){
+      header h1{
+        font-size:32px;
+      }
+
+      .card{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .btn{
+        width:100%;
+        text-align:center;
+      }
+    }
   </style>
 </head>
 
 <body>
 
 <header>
-  <h1>網頁設計課程成果展示</h1>
-  <p>國立金門大學 資訊工程學系｜課程習題與專案成果總覽</p>
+  <h1>期末作業成果整理</h1>
+  <p>網頁設計課程｜平時作業與期中專案彙整</p>
 </header>
 
-<section class="info">
-  <div class="info-grid">
-    <p><strong>學生：</strong>蘇冠侖</p>
-    <p><strong>學號：</strong>111410528</p>
-    <p><strong>班級：</strong>資工一</p>
-    <p><strong>學期：</strong>114 學年下學期</p>
-  </div>
-  <br>
-  <p><strong>成果說明：</strong>本頁整理本學期所有平時作業與期中專案，展示 HTML、CSS、JavaScript 與網站開發相關學習成果。</p>
-  <br>
-  <p><strong>AI 使用聲明：</strong>本作業製作過程有使用 ChatGPT 協助整理版面、文字說明與程式除錯，最終內容由本人確認、修改與提交。</p>
-</section>
+<main class="container">
 
-<main class="grid">
+  <section class="info">
+    <h2>基本資料</h2>
 
-  <div class="card">
-    <div class="tag">習題01</div>
-    <div class="content">
-      <h2>個人資訊網頁</h2>
-      <p>建立個人介紹網頁，練習 HTML 基本結構、文字排版與個人資料呈現。</p>
-      <a class="btn" href="../01/aboutme.html">查看網頁 →</a>
+    <div class="info-grid">
+      <p><strong>學生：</strong>蘇冠侖</p>
+      <p><strong>學號：</strong>111410528</p>
+      <p><strong>班級：</strong>資工一</p>
+      <p><strong>學期：</strong>114 學年下學期</p>
     </div>
-  </div>
 
-  <div class="card">
-    <div class="tag">習題02</div>
-    <div class="content">
-      <h2>表單設計</h2>
-      <p>設計學生資料輸入表單，練習 input、select、textarea 等表單元件。</p>
-      <a class="btn" href="../02/form.html">查看網頁 →</a>
-    </div>
-  </div>
+    <p>
+      本頁整理本學期網頁設計課程的平時作業與期中專案，包含 HTML、CSS、JavaScript
+      以及網站開發相關練習成果。
+    </p>
 
-  <div class="card">
-    <div class="tag repo">習題03</div>
-    <div class="content">
-      <h2>JavaScript 入門</h2>
-      <p>使用 hello.js 練習 JavaScript 基本語法與輸出，因本作業為 JS 檔案，按鈕導向 GitHub 資料夾查看。</p>
-      <a class="btn" href="https://github.com/Asadman04/_wp/tree/master/homework/03" target="_blank">查看 GitHub →</a>
-    </div>
-  </div>
+    <p>
+      <strong>AI 使用聲明：</strong>
+      本作業製作過程有使用 ChatGPT 協助整理版面、文字說明與程式除錯，
+      最終內容由本人確認、修改與提交。
+    </p>
+  </section>
 
-  <div class="card">
-    <div class="tag repo">習題04</div>
-    <div class="content">
-      <h2>JavaScript 10 題練習</h2>
-      <p>包含迴圈、函式、物件、陣列與基本邏輯判斷等 JavaScript 練習題，按鈕導向 GitHub 資料夾查看。</p>
-      <a class="btn" href="https://github.com/Asadman04/_wp/tree/master/homework/04" target="_blank">查看 GitHub →</a>
-    </div>
-  </div>
+  <section class="list">
 
-  <div class="card">
-    <div class="tag repo">習題05</div>
-    <div class="content">
-      <h2>OpenCode 網站專案</h2>
-      <p>部落格網站開發專案，包含 blog、blog1、blog2 等版本演進與實作紀錄，按鈕導向 GitHub 專案資料夾查看。</p>
-      <a class="btn" href="https://github.com/Asadman04/_wp/tree/master/homework/05/opencode" target="_blank">查看 GitHub →</a>
+    <div class="card">
+      <div class="left">
+        <span class="tag">習題 01</span>
+        <h2>個人資訊網頁</h2>
+        <p>建立個人介紹網頁，練習 HTML 基本結構、文字排版與個人資料呈現。</p>
+      </div>
+      <a class="btn" href="../01/aboutme.html">查看網頁</a>
     </div>
-  </div>
 
-  <div class="card">
-    <div class="tag">習題06</div>
-    <div class="content">
-      <h2>JavaScript 函式練習</h2>
-      <p>練習 JavaScript 函式、參數、回傳值與基礎互動功能。</p>
-      <a class="btn" href="../06/index.html">查看網頁 →</a>
+    <div class="card">
+      <div class="left">
+        <span class="tag">習題 02</span>
+        <h2>表單設計</h2>
+        <p>設計學生資料輸入表單，練習 input、select、textarea 等表單元件。</p>
+      </div>
+      <a class="btn" href="../02/form.html">查看網頁</a>
     </div>
-  </div>
 
-  <div class="card">
-    <div class="tag">習題07</div>
-    <div class="content">
-      <h2>JavaScript 綜合練習</h2>
-      <p>整合前面課程內容，完成 JavaScript 綜合應用與練習題。</p>
-      <a class="btn" href="../07/index.html">查看網頁 →</a>
+    <div class="card">
+      <div class="left">
+        <span class="tag repo">習題 03</span>
+        <h2>JavaScript 入門</h2>
+        <p>使用 hello.js 練習 JavaScript 基本語法與輸出，按鈕導向 GitHub 資料夾查看。</p>
+      </div>
+      <a class="btn" href="https://github.com/Asadman04/_wp/tree/master/homework/03" target="_blank">查看 GitHub</a>
     </div>
-  </div>
 
-  <div class="card">
-    <div class="tag midterm">期中專案</div>
-    <div class="content">
-      <h2>個人記帳小幫手</h2>
-      <p>期中專案，使用 HTML、CSS、JavaScript 製作個人支出紀錄與記帳功能。</p>
-      <a class="btn" href="../midterm/index.html">進入專案 →</a>
+    <div class="card">
+      <div class="left">
+        <span class="tag repo">習題 04</span>
+        <h2>JavaScript 10 題練習</h2>
+        <p>包含迴圈、函式、物件、陣列與基本邏輯判斷等 JavaScript 練習題。</p>
+      </div>
+      <a class="btn" href="https://github.com/Asadman04/_wp/tree/master/homework/04" target="_blank">查看 GitHub</a>
     </div>
-  </div>
+
+    <div class="card">
+      <div class="left">
+        <span class="tag repo">習題 05</span>
+        <h2>OpenCode 網站專案</h2>
+        <p>部落格網站開發專案，包含 blog、blog1、blog2 等版本演進與實作紀錄。</p>
+      </div>
+      <a class="btn" href="https://github.com/Asadman04/_wp/tree/master/homework/05/opencode" target="_blank">查看 GitHub</a>
+    </div>
+
+    <div class="card">
+      <div class="left">
+        <span class="tag repo">習題 06</span>
+        <h2>JavaScript 函式練習</h2>
+        <p>練習 JavaScript 函式、參數、回傳值與基礎互動功能，按鈕導向 GitHub 資料夾查看。</p>
+      </div>
+      <a class="btn" href="https://github.com/Asadman04/_wp/tree/master/homework/06" target="_blank">查看 GitHub</a>
+    </div>
+
+    <div class="card">
+      <div class="left">
+        <span class="tag repo">習題 07</span>
+        <h2>JavaScript 綜合練習</h2>
+        <p>整合前面課程內容，完成 JavaScript 綜合應用與練習題，按鈕導向 GitHub 資料夾查看。</p>
+      </div>
+      <a class="btn" href="https://github.com/Asadman04/_wp/tree/master/homework/07" target="_blank">查看 GitHub</a>
+    </div>
+
+    <div class="card">
+      <div class="left">
+        <span class="tag midterm">期中專案</span>
+        <h2>個人記帳小幫手</h2>
+        <p>使用 HTML、CSS、JavaScript 製作個人支出紀錄與記帳功能。</p>
+      </div>
+      <a class="btn" href="../midterm/index.html">進入專案</a>
+    </div>
+
+  </section>
 
 </main>
 
 <footer>
-  © 2026 蘇冠侖｜網頁設計課程成果展示｜GitHub Pages
+  © 2026 蘇冠侖｜期末作業成果整理
 </footer>
 
 </body>
